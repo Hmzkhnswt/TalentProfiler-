@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Profiler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White container background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #007BFF; /* Blue heading */
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #cccccc; /* Light gray border */
+            border-radius: 5px;
+            font-size: 16px;
+            width: 96%;
+            margin-bottom: 10px;
+            transition: border-color 0.3s;
+        }
+        input[type="file"]:hover {
+            border-color: #007BFF; /* Blue border on hover */
+        }
+        input[type="submit"] {
+            background-color: #007BFF; /* Blue button background */
+            color: #ffffff; /* White button text */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #007BFF; /* Green heading */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        li {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        ul li:nth-child(odd) {
+            background-color: #007BFF; /* Light green background for skills */
+        }
+        li:hover {
+            background-color: #007BFF;
+            color: #0056b3; /* Darker blue and text color on hover */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Talent Profiler</h1>
+        <p>Upload your CV/Resume for Skills Matching</p>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf,.docx">
+            <input type="submit" value="Upload">
+        </form>
+        <p>{{ message }}</p>
+        <h2>Extracted Skills:</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
