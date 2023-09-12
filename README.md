@@ -1,4 +1,6 @@
 # TalentProfiler
+![SS](https://github.com/Hmzkhnswt/TalentProfiler-/assets/95092387/fa565144-23e1-4058-a7d2-dc1e309b684f)
+
 # Resume Classifier
 
 The Resume Classifier is a web application that allows users to upload a resume in PDF or DOCX format, and it extracts skills from the resume while predicting the most relevant job category based on the content using a machine learning classifier.
